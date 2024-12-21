@@ -3,7 +3,7 @@
 
 > プログラミングに対する考え方に影響を与えない言語は、知る価値がありません。
 
-> -アラン・パーリス
+> -アラン・パリス
 
 Lisp は AI 作業の主要な言語ですが、決して唯一の言語ではありません。
 もう一つの有力な候補は Prolog で、その名前は「論理的プログラミング(Programming in logic)」に由来しています。<a id="tfn11-1"></a><sup>[1](#fn11-1)</sup>
@@ -708,6 +708,7 @@ Prolog は、上から下、左から右の順に解法を検索します。
 ```
 
 それでは、いくつかのクエリを試してみましょう。
+
 ```lisp
 > (?- (likes Sandy ?who))
 ?WHO = LEE;
@@ -805,7 +806,7 @@ Prolog では、「2 はどのリストのメンバーですか?」や「どの�
                  (append (clause-body new-clause) other-goals)
              (unify goal (clause-head new-clause) bindings))))
   (get-clauses (predicate goal))))
-  ```
+```
 
 `prove` が成功した場合、解法が見つかったことを意味します。
 より多くの解法が必要な場合は、プロセスを失敗させて、後戻りして再試行させる方法が必要です。
@@ -836,7 +837,7 @@ Prolog では、このような手順は言語に組み込まれており、ユ�
               ;; a primitive function to call
               (funcall clauses (rest goal) bindings
                                 other-goals))))
-                                ```
+```
 
 以下は、プリミティブ目標 `show-prolog-vars` を目標リストの最後に追加した `top-level-prove` のバージョンです。
 このバージョンでは、表示に関する処理は `show-prolog-vars` のプリミティブによって処理されるため、 `show-prolog-solutions` 自体を呼び出す必要がないことに注意してください。
@@ -886,7 +887,7 @@ Prolog では、このような手順は言語に組み込まれており、ユ�
   (otherwise
    (format t " Type ; to see more or . to stop")
    (continue-p))))
-   ```
+```
 
 このバージョンは有限問題では以前のバージョンと同様に機能します。
 唯一の違いは、セミコロンを入力するのはシステムではなくユーザーであることです。
@@ -914,7 +915,8 @@ No.
 ?LIST = (?X3303 2 . ?REST3307);
 ?LIST = (?X3303 ?X3308 2 . ?REST3312);
 ?LIST = (?X3303 ?X3308 ?X3313 2 . ?REST3317).
-No.```
+No.
+```
 次に、関係の長さの定義を追加しましょう。
 
 ```lisp
@@ -1224,8 +1226,8 @@ Prolog のバックトラッキングによる後方連鎖は、問題に対す�
   "Follow pointers for bound variables."
   '(progn (loop while (and (var-p ,exp) (bound-p ,exp))
                         do (setf ,exp (var-binding ,exp)))
-                  ,exp))
-                  ```
+                  ,exp)
+```
 
 以下の関数 `unify!` は `unify` の破壊的なバージョンです。
 これは、成功した場合は true を返し、失敗した場合は false を返す述語であり、変数束縛を変更する副作用があります。
@@ -1254,7 +1256,7 @@ Prolog のバックトラッキングによる後方連鎖は、問題に対す�
  "Set var's binding to value. Always succeeds (returns t)."
  (setf (var-binding var) value)
  t)
- ```
+```
 
 これは、慎重に作成された `:print-function` の最初の例です。
 注目すべき点が3つあります。
