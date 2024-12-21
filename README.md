@@ -1,4 +1,4 @@
-## PAIP lisp JP Prolog
+## PAIP lisp JA Prolog
 PAIP(Paradigms of Artificial Intelligence Programming)はPeter Norvigによって1992年に書かれた人工知能の教科書です。
 本リポジトリはPAIP中で言及されているPrologの実装部分に焦点を当てたPAIPの非公式参考訳です。
 
