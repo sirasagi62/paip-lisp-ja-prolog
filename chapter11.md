@@ -1020,10 +1020,10 @@ Prolog インタプリタでは、現在の状態は目標のリストとして�
 ```lisp
 (defmacro <- (&rest clause)
   "Add a clause to the data base."
-  '(add-clause ',(replace-?-vars clause)))
+  `(add-clause ',(replace-?-vars clause)))
 (defmacro ?- (&rest goals)
   "Make a query and print answers."
-  '(top-level-prove '.(replace-?-vars goals)))
+  `(top-level-prove ',(replace-?-vars goals)))
 (defun replace-?-vars (exp)
   "Replace any ? within exp with a var of the form ?123."
   (cond ((eq exp '?) (gensym "?"))
@@ -1112,7 +1112,7 @@ Prolog が非常に得意とするものの例として、論理パズルが挙�
  (member (house ? ? ? coffee green) ?h)            ; 4
  (member (house ukrainian ? ? tea ?) ?h)           ; 5
  (iright (house ? ? ? ? ivory)                     ; 6
-         (house 1111 green) ?h)
+         (house ? ? ? ? green) ?h)
  (member (house ? snails winston ? ?) ?h)          ; 7
  (member (house ? ? kools ? yellow) ?h)            ; 8
  (nextto (house ? ? chesterfield ? ?)              ;11
