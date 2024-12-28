@@ -1077,7 +1077,7 @@ Prolog が非常に得意とするものの例として、論理パズルが挙�
 
 ```lisp
 (<- (member ?item (?item . ?rest)))
-(<- (member ?item (?x . ? rest)) (member ?item ?rest))
+(<- (member ?item (?x . ?rest)) (member ?item ?rest))
 
 (<- (nextto ?x ?y ?list) (iright ?x ?y ?list))
 (<- (nextto ?x ?y ?list) (iright ?y ?x ?list))
